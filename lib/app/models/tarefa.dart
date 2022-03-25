@@ -3,5 +3,8 @@ class Tarefa {
   final String descriacao;
   final DateTime dataDeCriacao;
 
-  Tarefa(this.title, this.descriacao, this.dataDeCriacao);
+  Tarefa(
+      {required this.title,
+      required this.descriacao,
+      required this.dataDeCriacao});
 }
