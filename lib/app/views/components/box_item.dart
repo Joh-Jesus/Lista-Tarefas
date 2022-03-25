@@ -13,17 +13,19 @@ class BoxItem extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         height: 60,
         color: Color.fromARGB(221, 170, 161, 161),
-        child: Column(children: [
-          Row(
-            children: [
-              Text(tarefa.title),
-              SizedBox(width: 10),
-              Text(tarefa.dataDeCriacao),
-            ],
-          ),
-          SizedBox(height: 3),
-          Text(tarefa.descriacao),
-        ]),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Text(tarefa.title),
+                SizedBox(width: 10),
+                Text("${tarefa.dataDeCriacao}"),
+              ],
+            ),
+            SizedBox(height: 3),
+            Text(tarefa.descriacao),
+          ],
+        ),
       ),
       onTap: () {},
     );
