@@ -1,4 +1,4 @@
-#Fri Feb 18 19:43:03 BRT 2022
-base.0=/home/joh/Documentos/projetos/lista_de_tarefas/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+#Tue Mar 29 20:41:31 BRT 2022
+base.0=/mnt/0AEA181052142728/projetos/Lista-Tarefas/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

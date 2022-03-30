@@ -2,9 +2,9 @@ import 'package:floor/floor.dart';
 
 class EntityBase {
   @PrimaryKey(autoGenerate: true)
-  final int id;
+  final int? id;
 
-  final String createAt;
+  final String? createAt;
 
   EntityBase(
     this.id,

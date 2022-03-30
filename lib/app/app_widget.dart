@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:lista_de_tarefas/app/database/database.dart';
+import 'package:lista_de_tarefas/app/views/home_page.dart';
 
 class AppWidget extends StatelessWidget {
   final AppDatabase db;
@@ -8,12 +8,11 @@ class AppWidget extends StatelessWidget {
   const AppWidget({Key? key, required this.db}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routeInformationParser: Modular.routeInformationParser,
-      routerDelegate: Modular.routerDelegate,
+    return MaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      home: HomePage(db: db),
     );
   }
 }

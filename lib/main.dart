@@ -7,9 +7,7 @@ import 'package:lista_de_tarefas/app/database/database.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(ModularApp(
-      module: AppModule(),
-      child: AppWidget(
-        db: await $FloorAppDatabase.databaseBuilder('app_database.db').build(),
-      )));
+  runApp(AppWidget(
+    db: await $FloorAppDatabase.databaseBuilder('app_database.db').build(),
+  ));
 }

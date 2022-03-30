@@ -81,7 +81,7 @@ class _$AppDatabase extends AppDatabase {
       },
       onCreate: (database, version) async {
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `Tarefas` (`title` TEXT NOT NULL, `descricao` TEXT NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `createAt` TEXT NOT NULL)');
+            'CREATE TABLE IF NOT EXISTS `Tarefas` (`title` TEXT, `descricao` TEXT, `id` INTEGER PRIMARY KEY AUTOINCREMENT, `createAt` TEXT)');
 
         await callback?.onCreate?.call(database, version);
       },
@@ -145,10 +145,10 @@ class _$TarefaRepositoryDao extends TarefaRepositoryDao {
   Future<TarefaEntity?> getById(int id) async {
     return _queryAdapter.query('SELECT * FROM Tarefas WHERE id = ?1',
         mapper: (Map<String, Object?> row) => TarefaEntity(
-            id: row['id'] as int,
-            createAt: row['createAt'] as String,
-            title: row['title'] as String,
-            descricao: row['descricao'] as String),
+            id: row['id'] as int?,
+            createAt: row['createAt'] as String?,
+            title: row['title'] as String?,
+            descricao: row['descricao'] as String?),
         arguments: [id]);
   }
 
@@ -156,10 +156,10 @@ class _$TarefaRepositoryDao extends TarefaRepositoryDao {
   Future<List<TarefaEntity?>> getAll() async {
     return _queryAdapter.queryList('SELECT * FROM Tarefas',
         mapper: (Map<String, Object?> row) => TarefaEntity(
-            id: row['id'] as int,
-            createAt: row['createAt'] as String,
-            title: row['title'] as String,
-            descricao: row['descricao'] as String));
+            id: row['id'] as int?,
+            createAt: row['createAt'] as String?,
+            title: row['title'] as String?,
+            descricao: row['descricao'] as String?));
   }
 
   @override

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/joh/Documentos/projetos/lista_de_tarefas/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-ne/values-ne.xml",
+            "outputFile": "/mnt/0AEA181052142728/projetos/Lista-Tarefas/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-ne/values-ne.xml",
             "map": [
                 {
-                    "source": "/home/joh/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/res/values-ne/values-ne.xml",
+                    "source": "/home/joh/.gradle/caches/transforms-2/files-2.1/47d9920a00d9170492dbcc2f93cc641c/core-1.1.0/res/values-ne/values-ne.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:lista_de_tarefas/app/database/database.dart';
 import 'package:lista_de_tarefas/app/views/home_page.dart';
 
 class AppModule extends Module {
@@ -7,6 +8,6 @@ class AppModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-        ChildRoute('/', child: (_, __) => HomePage()),
+//        ChildRoute('/', child: (_, __) => HomePage()),
       ];
 }

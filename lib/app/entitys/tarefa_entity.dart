@@ -3,13 +3,9 @@ import 'package:lista_de_tarefas/app/entitys/entity_base.dart';
 
 @Entity(tableName: 'Tarefas')
 class TarefaEntity extends EntityBase {
-  TarefaEntity(
-      {required int id,
-      required String createAt,
-      required this.title,
-      required this.descricao})
-      : super(id, createAt);
+  TarefaEntity({int? id, String? createAt, this.title, this.descricao})
+      : super(id, createAt!);
 
-  final String title;
-  final String descricao;
+  final String? title;
+  final String? descricao;
 }
