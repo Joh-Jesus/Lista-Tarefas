@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:lista_de_tarefas/app/controller/tarefa_controller.dart';
 import 'package:lista_de_tarefas/app/database/database.dart';
 import 'package:lista_de_tarefas/app/entitys/tarefa_entity.dart';
 
 class TarefaPage extends StatefulWidget {
-  final AppDatabase db;
   final TarefaEntity? tarefa;
 
-  TarefaPage({Key? key, required this.db, this.tarefa}) : super(key: key);
+  TarefaPage({Key? key, this.tarefa}) : super(key: key);
 
   @override
   _TarefaPageState createState() => _TarefaPageState();
@@ -16,6 +17,8 @@ class _TarefaPageState extends State<TarefaPage> {
   var _titleController;
 
   var _descricaoController;
+
+  final controller = Modular.get<TarefaController>();
 
   @override
   void initState() {
@@ -41,9 +44,9 @@ class _TarefaPageState extends State<TarefaPage> {
               descricao: _descricaoController.text,
             );
             if (widget.tarefa != null) {
-              widget.db.tarefaRepositoryDao.updateItem(tarefa);
+              controller.db.tarefaRepositoryDao.updateItem(tarefa);
             } else {
-              widget.db.tarefaRepositoryDao.insertItem(tarefa);
+              controller.db.tarefaRepositoryDao.insertItem(tarefa);
             }
 
             Navigator.pop(context, true);
@@ -80,7 +83,8 @@ class _TarefaPageState extends State<TarefaPage> {
                       Icons.delete,
                     ),
                     onPressed: () {
-                      widget.db.tarefaRepositoryDao.deleteItem(widget.tarefa!);
+                      controller.db.tarefaRepositoryDao
+                          .deleteItem(widget.tarefa!);
                       Navigator.pop(context, true);
                     },
                   )
