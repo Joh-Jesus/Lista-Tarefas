@@ -49,7 +49,7 @@ class _TarefaPageState extends State<TarefaPage> {
               controller.db.tarefaRepositoryDao.insertItem(tarefa);
             }
 
-            Navigator.pop(context, true);
+            Modular.to.pushReplacementNamed('/');
           }
         },
         child: Icon(Icons.save),
@@ -85,6 +85,7 @@ class _TarefaPageState extends State<TarefaPage> {
                     onPressed: () {
                       controller.db.tarefaRepositoryDao
                           .deleteItem(widget.tarefa!);
+                      setState(() {});
                       Navigator.pop(context, true);
                     },
                   )
